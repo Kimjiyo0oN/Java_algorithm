@@ -27,7 +27,7 @@ public class solution2 {
                     answer[people.get(s)]++;  // 해당 유저를 신고한 유저의 answer값++
                 }
             }
-        }
+        } 
         return answer;
     }
 	public static void main(String[] args) {
