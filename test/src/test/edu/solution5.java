@@ -12,10 +12,6 @@ public class solution5 {
 			if(nownum == 0) {
 				nownum = 11;
 			}
-			//int L = (nownum > leftnum) ? nownum-leftnum :leftnum-nownum;
-			//int R = (nownum > rightnum) ? nownum-rightnum :rightnum-nownum;
-			//leftdis = (L%3)+(L/3) ;
-			//rightdis= (R%3)+(R/3) ;
 			leftdis = (Math.abs(leftnum-nownum))/3 + (Math.abs(leftnum-nownum))%3;
 			rightdis=(Math.abs(rightnum-nownum))/3 + (Math.abs(rightnum-nownum))%3;
 			//System.out.println(leftdis +"left"+leftnum);
@@ -79,12 +75,7 @@ public class solution5 {
 				} break;
 				default: continue;
 			}
-			
-//			if(numbers[i]== 1 ||numbers[i]== 4) {
-//				
-//			}else if() {
-//				
-//			}
+		
 		}
 		
         
