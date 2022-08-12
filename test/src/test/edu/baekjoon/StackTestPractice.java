@@ -3,7 +3,6 @@ package test.edu.baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
@@ -16,7 +15,7 @@ public class StackTestPractice {
 	
 	private Stack<Integer> stack= new Stack<>();
 	
-	// push 데이터 추가 	
+	// push 데이터 추가 	   
 	
 	public void push(Integer a) {
 		this.stack.push(a);
@@ -64,7 +63,7 @@ public class StackTestPractice {
 		
 		StackTest st = new StackTest();
 		
-		
+		 
 		//Scanner sc = new Scanner(System.in);
 		BufferedReader SB = new BufferedReader(new InputStreamReader(System.in));
 		//System.out.print("출력 해야하는 명령 수: ");

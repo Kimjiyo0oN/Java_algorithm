@@ -2,6 +2,8 @@ package test.edu;
 
 import java.util.*;
 
+
+//아이디를 형식에 맞게 변환해서 추천시켜줌
 public class solution3 {
 	public String solution(String new_id) {
 		

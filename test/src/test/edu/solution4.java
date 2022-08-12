@@ -1,5 +1,7 @@
 package test.edu;
 
+
+//영어로 되어있는 숫자를 숫자로 변환시켜서 알려줌
 public class solution4 {
 	public int solution(String s) {
         int answer = 0;

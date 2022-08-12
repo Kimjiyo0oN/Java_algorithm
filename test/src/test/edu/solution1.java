@@ -2,6 +2,8 @@ package test.edu;
 
 import java.util.Scanner;
 
+
+//로또 최고순위 최저순위 로또 숫자가 지워졌을때
 public class solution1 {
 	
 	public int[] solution(int[] lottos, int[] win_nums){

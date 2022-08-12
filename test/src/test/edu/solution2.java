@@ -2,7 +2,8 @@ package test.edu;
 
 import java.util.*;
 
-
+// 게시판에서 유저가  유저를 신고 했을 시 몇번 이상이면 정지 당하고 
+// 신고한 사람한테 정지 당했다는 사실을 메일로 보내줌
 public class solution2 {
 	public int[] solution(String[] id_list, String[] report, int k) {
        
