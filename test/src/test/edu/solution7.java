@@ -1,5 +1,5 @@
 package test.edu;
-
+//numbers 안에 안들어 있는 숫자 더하기
 public class solution7 {
 	
 	 public int solution(int[] numbers) {

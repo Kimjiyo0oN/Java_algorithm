@@ -1,5 +1,6 @@
 package test.edu;
 
+// 절대값을 음수 양수로 알아내서 합계 반환 
 public class solution8 {
 	public int solution(int[] absolutes, boolean[] signs) {
         int answer = 0;

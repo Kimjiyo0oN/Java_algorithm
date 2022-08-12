@@ -2,6 +2,10 @@ package test.edu;
 
 import java.util.Arrays;
 
+
+//인형뽑기
+//스택으로 뽑은 인형을 쌓아올리고 바로 이전에 같은 인형을 뽑았으면(스택에 바로 같은게 쌓여 있으면) 두개 다 지우고 
+//몇개의 인형이 사라졌는지 반환
 public class solution6Practice {
 	   public int solution(int[][] board, int[] moves) {
 		   int answer = 0;
