@@ -12,24 +12,35 @@ public class parentheses {
 	
 	public int report(String input) {
 		int answer = 0;
-		
+		int cnt = 1;
 		
 		for(int i =0; i < input.length(); i++) {
-			char ch = input.charAt(i);
-			if() {
-				
+			if(input.charAt(i)=='(') {
+				stack.push(input.charAt(i));
+				cnt *=2;
+			}else if(input.charAt(i)==')') {
+				if(stack.isEmpty() || stack.peek() != '(') {
+					answer = 0;
+					break;
+				}else if(input.charAt(i-1)=='(') {
+					answer+= cnt;	
+				}
+				stack.pop();
+				cnt/=2;
+			}else if(input.charAt(i)=='[') {
+				stack.push(input.charAt(i));
+				cnt *=3;
+			}else if(input.charAt(i)==']') {
+				if(stack.isEmpty() || stack.peek() != '[') {
+
+					answer = 0;
+					break;
+				}else if(input.charAt(i-1)=='[') {
+					answer+= cnt;	
+				}
+				stack.pop();
+				cnt/=3;
 			}
-			
-		}
-		
-		if(input.contains(")(")) {
-			
-		}else if(input.contains("][")) {
-			
-		}else if(input.contains("](")) {
-			
-		}else if(input.contains(")[")) {
-			
 		}
 		return answer; 
 	}
@@ -39,6 +50,6 @@ public class parentheses {
 		
 		BufferedReader SB = new BufferedReader(new InputStreamReader(System.in));
 		String input = SB.readLine();
-		pa.report(input);
+		System.out.println(pa.report(input)); 
 	}
 }

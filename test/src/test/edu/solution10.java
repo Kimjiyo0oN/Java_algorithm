@@ -1,11 +1,46 @@
 package test.edu;
 
+//import java.util.Arrays;
+
+//소수 구하기
 public class solution10 {
 	public int solution(int[] nums) {
-        int answer = -1;
+        int answer = 0;
+        int result = 0;
 
-        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-        System.out.println("Hello Java");
+        for(int i=0; i<nums.length; i++) {
+        	for(int x=i+1; x<nums.length; x++) {
+        		for(int y=x+1; y<nums.length; y++) {
+        			answer++;
+        			result = nums[i]+nums[x]+nums[y];
+        			if(result>10) {
+        				if((result%2==0)&&(result%3==0)) {
+            				answer--;
+        				}
+        			}else {
+        				for(int n=2; n < result; n++) {
+            				if(Math.sqrt(result)==n) {
+            					answer--;
+            					break;
+            				}
+            			}
+        			}
+        			
+//        			if(sort>result&&result>=10) {
+//        				for(i =2; i< sort; i++) {
+//        					if(result%i) {
+//                				answer +=1;
+//                			}
+//        				}
+//        			}else {
+//        				if((result%2!=0)&&(result%3!=0)) {
+//            				answer +=1;
+//        				}
+//        			}
+        			
+        		}
+        	}
+        }
 
         return answer;
     }
