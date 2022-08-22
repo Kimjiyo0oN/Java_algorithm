@@ -13,30 +13,12 @@ public class solution10 {
         		for(int y=x+1; y<nums.length; y++) {
         			answer++;
         			result = nums[i]+nums[x]+nums[y];
-        			if(result>10) {
-        				if((result%2==0)&&(result%3==0)) {
-            				answer--;
-        				}
-        			}else {
         				for(int n=2; n < result; n++) {
-            				if(Math.sqrt(result)==n) {
+            				if(result%n==0) {
             					answer--;
             					break;
             				}
             			}
-        			}
-        			
-//        			if(sort>result&&result>=10) {
-//        				for(i =2; i< sort; i++) {
-//        					if(result%i) {
-//                				answer +=1;
-//                			}
-//        				}
-//        			}else {
-//        				if((result%2!=0)&&(result%3!=0)) {
-//            				answer +=1;
-//        				}
-//        			}
         			
         		}
         	}
@@ -47,7 +29,7 @@ public class solution10 {
 	public static void main(String[] args) {
 		  
 		  solution10 sol = new solution10();
-		  int[] nums = {1,2,3,4};
+		  int[] nums = {1,2,7,6,4};
 		  
 		  System.out.println(sol.solution(nums));
 	  }
