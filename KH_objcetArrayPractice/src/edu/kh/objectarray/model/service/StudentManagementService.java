@@ -99,6 +99,7 @@ public class StudentManagementService {
 				student[idx].setJava(java);
 				student[idx].setDataBasic(database);
 				student[idx].setHtml(html);
+				student[idx].setAvg(((java+database+html)/3.0));
 				return 1;
 			}
 		}
@@ -122,15 +123,41 @@ public class StudentManagementService {
 			}
 			
 		}
-		
+
 		//검색이 아무도 되지 않은 경우 
 		if(resultIdx == 0) {
 			return null;
 		}else {// 결과가 있음
+			for(int i =0; i < resultArr.length; i++) {
+
+				if(resultArr[i]== null) {// 검색 결과가 더 이상 없음
+					break;
+				}
+				
+				if(resultArr[i].getAvg()>=60) {
+					resultArr[i].setSucc("통과");
+				}else {
+					resultArr[i].setSucc("재시험");
+				}
+			}
 			return resultArr; 
 		}
 		
 	}
-	
+	public int delectStudent(int idx) {
+		Student[] resultArr = new Student[student.length-1];
+		if(idx<0 || idx >= student.length) {
+			return -1;
+		}else {
+			if(student[idx] == null) {
+				return 0;
+			}else {
+				System.arraycopy(student, 0, resultArr, 0, idx);
+				System.arraycopy(student, idx+1, resultArr, idx, student.length-(idx+1));
+				student = resultArr;
+				return 1;
+			}
+		}
+	}
 	
 }

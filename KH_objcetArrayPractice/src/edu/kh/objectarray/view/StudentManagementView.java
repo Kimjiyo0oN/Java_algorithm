@@ -27,7 +27,7 @@ public class StudentManagementView {
 			System.out.println("4. 학생 정보 조회(이름 검색)");
 			System.out.println("5. 학생 정보 수정(인덱스)");
 			System.out.println("6. 학생 점수 조회(이름 검색)");
-			System.out.println("7. 학생 정보 삭제");
+			System.out.println("7. 학생 정보 삭제(인덱스)");
 			System.out.println("0. 종료");
 			System.out.println("---------------------------");
 			
@@ -47,8 +47,10 @@ public class StudentManagementView {
 			break;
 			case 5:updateStudent();
 			break;
-			case 6:break;
-			case 7:break;
+			case 6:ScoreStudent();
+			break;
+			case 7:delectStudent();
+			break;
 			case 0:System.out.println("프로그램을 종료합니다."); break;
 			default:System.out.println("잘못 입력 하셨습니다.");
 			}
@@ -181,5 +183,42 @@ public class StudentManagementView {
 		System.out.print("검색할 학생 이름: ");
 		String stdName = buffer.readLine();
 		
+		Student[] resultArr =  service.ScoreStudent(stdName);
+		if(resultArr == null ) {
+			System.out.println("검색 결과가 없습니다.");
+		}else {
+			for(int i=0; i <resultArr.length; i++) {
+				if(resultArr[i]== null) {// 검색 결과가 더 이상 없음
+					break;
+				}
+				
+				// 홍길동(A1반 Java :  점,DataBase:  점,Html:  점, 평균:  점, 합격:   )
+				System.out.printf("%s(%s반,나이: %d, Java : %d점, DataBase: %d점, Html: %d점, 평균: %.2f점, 합격: %s)\n",
+						resultArr[i].getName(),
+						resultArr[i].getClassRoom(),
+						resultArr[i].getAge(),
+						resultArr[i].getJava(),
+						resultArr[i].getDataBase(),
+						resultArr[i].getHtml(),
+						resultArr[i].getAvg(),
+						resultArr[i].getSucc());
+			}
+		}
+	}
+	public void delectStudent() throws IOException {
+		System.out.println("학생 정보 삭제(인덱스)");
+		
+		System.out.print("인덱스 : ");
+		int idx = Integer.parseInt(buffer.readLine());
+		
+		int result = service.delectStudent(idx);
+		
+		if(result == -1) {
+			System.out.println("입력한 값이 인덱스 범위를 초과했습니다.");
+		}else if(result == 0) {
+			System.out.println("해당 인덱스에 학생 정보가 존재하지 않습니다.");
+		}else {
+			System.out.println("학생 정보가 삭제되었습니다.");
+		}
 	}
 }
