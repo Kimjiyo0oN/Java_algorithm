@@ -1,5 +1,7 @@
 package test.edu;
 
+
+//체육복 통과 X 두줄 에러 
 public class solution13 {
 	public int solution(int n, int[] lost, int[] reserve) {
         int answer = n-lost.length;
