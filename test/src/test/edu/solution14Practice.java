@@ -2,6 +2,7 @@ package test.edu;
 
 import java.util.Stack;
 
+//다트게임 간략하게 한번 더
 public class solution14Practice {
 	public int solution(String dartResult) {
         int answer = 0;
