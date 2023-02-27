@@ -41,7 +41,7 @@ public class test1427_2 {
 	}
 	
 	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		/*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		String input = br.readLine();
 		String[] arrayS;
@@ -55,6 +55,51 @@ public class test1427_2 {
 		for(int i: array) {
 			bw.write(i+"");
 		}
-		bw.close();
+		bw.close();*/
+		
+		    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		    StringBuilder sb = new StringBuilder();
+		    float num2;
+		    float result =0;
+		    String symbol;
+		    int flag =0;
+		    while(true){
+		      if(flag == 2){
+		    	  sb.append("계산 초기화하시겠습니까?(1. 초기화 2. 이어서):");
+		        flag = Integer.parseInt(br.readLine());
+		        result = (flag == 1) ? 0 : result;
+		      }
+		      if(flag != 2){
+		    	  sb.append("숫자를 입력해주세요:");
+		        result= Float.parseFloat(br.readLine()); // 계산할 첫 숫자 받아오기
+		      }
+		      sb.append("수학 기호를 입력해주세요(+,-,*,/,%만 가능)");
+		      symbol = br.readLine().trim();
+		      sb.append("숫자를 입력해주세요:");
+		      num2 = Float.parseFloat(br.readLine()); // 계산할 두번째 숫자 받아오기
+		      switch (symbol){
+		        case "+":
+		          result += num2;
+		          break;
+		        case "-":
+		          result -= num2;
+		          break;
+		        case "/":
+		          result /= num2;
+		          break;
+		        case "*":
+		          result *= num2;
+		          break;
+		        case "%":
+		          result %= num2;
+		          break;
+		      }
+		      sb.append(result +symbol+num2+" = " + result+"\n");
+		      sb.append("계산기를 종료하시겠습니까?(1. 예 , 2. 아니오): ");
+		      flag = Integer.parseInt(br.readLine());
+		      if(flag == 1) break;
+		    }
+		    br.close();
+		  
 	}
 }
